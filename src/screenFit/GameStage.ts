@@ -47,6 +47,7 @@ class GameStage extends egret.DisplayObjectContainer
         this._gameLayers = new GameLayer();
         this.setStageSize();
         this.listenResize();
+        EventCenter.addEventListener(GameEvent.SET_ASSET_POSITION, this.onSetAssetPos, this);
     }
 
     /*监听resize事件*/
@@ -163,4 +164,9 @@ class GameStage extends egret.DisplayObjectContainer
     public getLayer(type:string):SDisplayObjectContainer{
         return this._gameLayers.getLayer(type);
     }
+
+    private onSetAssetPos(e:GameEvent):void{
+        this.processChildren(e.eventBody);
+    }
+
 }

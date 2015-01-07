@@ -7,7 +7,7 @@ class GameEvent extends egret.Event
     public static GAME_EVENT_GAMESTART:string = "game_start";
     public static GAME_EVENT_GAMERESTART:string = "game_restart";
     public static GAME_EVENT_SHARE:string = "game_share";
-    public static COLLECT_BLOCK:string = "collect_block";
+    public static SET_ASSET_POSITION:string = "set_asset_position";
 
     public target:any;
     public currentTarget:any;

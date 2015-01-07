@@ -16,6 +16,7 @@ class SBitmap extends egret.Bitmap implements IAdaptableDisplayObject
 
     public set x(value:number) {
         this.originX = value;
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, this));
     }
 
     public get y():number {
@@ -24,6 +25,7 @@ class SBitmap extends egret.Bitmap implements IAdaptableDisplayObject
 
     public set y(value:number) {
         this.originY = value;
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, this));
     }
 
     public getOriginX():number{

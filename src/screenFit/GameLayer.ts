@@ -24,12 +24,7 @@ class GameLayer
             return this._layers.layerType;
 
         var layer:SDisplayObjectContainer = new SDisplayObjectContainer();
-        layer.addEventListener("addChild", this.onLayerAddChild, this);
         this._layers.layerType = layer;
         return layer;
-    }
-
-    private onLayerAddChild(e:GameEvent):void{
-        GameStage.i().processChildren(e.eventBody);
     }
 }

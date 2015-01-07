@@ -16,6 +16,7 @@ class SDisplayObjectContainer extends egret.DisplayObjectContainer implements IA
 
     public set x(value:number) {
         this.originX = value;
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, this));
     }
 
     public get y():number {
@@ -24,6 +25,7 @@ class SDisplayObjectContainer extends egret.DisplayObjectContainer implements IA
 
     public set y(value:number) {
         this.originY = value;
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, this));
     }
 
     public getOriginX():number{
@@ -48,7 +50,7 @@ class SDisplayObjectContainer extends egret.DisplayObjectContainer implements IA
     }
 
     public addChildAt(child:egret.DisplayObject, index:number):egret.DisplayObject{
-        this.dispatchEvent(new GameEvent("addChild", child));
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, child));
         return super.addChildAt(child, index);
     }
 }
