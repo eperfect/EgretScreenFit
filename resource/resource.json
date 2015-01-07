@@ -1,0 +1,20 @@
+{
+"resources":
+	[
+		{"name":"bgImage","type":"image","url":"assets/gameBg.jpg"},
+        {"name":"top","type":"image","url":"assets/top.png"},
+        {"name":"topAsset","type":"image","url":"assets/topAsset.png"},
+        {"name":"topAsset2","type":"image","url":"assets/topAsset2.png"},
+        {"name":"bottom","type":"image","url":"assets/bottom.png"},
+        {"name":"btn1","type":"image","url":"assets/btn1.png"},
+        {"name":"btn2","type":"image","url":"assets/btn2.png"},
+        {"name":"btn3","type":"image","url":"assets/btn3.png"},
+        {"name":"bottomAsset","type":"image","url":"assets/bottomAsset.png"},
+        {"name":"bottomAsset2","type":"image","url":"assets/bottomAsset2.png"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"btn1,btn2,btn3,bgImage,top,topAsset,topAsset2,bottomAsset,bottomAsset2,bottom"}
+	]
+}
