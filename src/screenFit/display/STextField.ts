@@ -1,7 +1,7 @@
 /**
- * Created by Saco on 2015/1/4.
+ * Created by Saco on 2015/1/8.
  */
-class SSprite extends egret.Sprite implements IAdaptableDisplayObject
+class STextField extends egret.TextField implements IAdaptableDisplayObject
 {
     public originX:number = 0;
     public originY:number = 0;
@@ -42,15 +42,5 @@ class SSprite extends egret.Sprite implements IAdaptableDisplayObject
 
     public getOriginY():number{
         return this.originY;
-    }
-
-    public addChild(child:egret.DisplayObject):egret.DisplayObject{
-        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, child));
-        return super.addChild(child);
-    }
-
-    public addChildAt(child:egret.DisplayObject, index:number):egret.DisplayObject{
-        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, child));
-        return super.addChildAt(child, index);
     }
 }

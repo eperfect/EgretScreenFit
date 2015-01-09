@@ -45,7 +45,7 @@ class SDisplayObjectContainer extends egret.DisplayObjectContainer implements IA
     }
 
     public addChild(child:egret.DisplayObject):egret.DisplayObject{
-        this.dispatchEvent(new GameEvent("addChild", child));
+        EventCenter.dispatchEvent(new GameEvent(GameEvent.SET_ASSET_POSITION, child));
         return super.addChild(child);
     }
 
