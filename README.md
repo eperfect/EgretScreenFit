@@ -4,12 +4,15 @@ Egret开发游戏屏幕适配解决方案，适配不同分辨率，两种适配
 适配库是基于Egret的屏幕适配策StageScaleMode.NO_BORDER开发，采用NO_BORDER是因为他没有黑边，而且游戏内容是等比例拉伸。可以把NO_BORDER理解为按宽度适配，也就是宽度填满屏幕，长度上“多退少补”。下面用一个简单游戏场景示例：
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/1.jpg?raw=true)
+
 设计分辨率
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/2.jpg?raw=true)
+
 高度溢出分辨率表现（下方有黑边框）
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/3.jpg?raw=true)
+
 高度不够时游戏表现（下方内容显示不全）
 
 ##介绍：
@@ -17,13 +20,13 @@ Egret开发游戏屏幕适配解决方案，适配不同分辨率，两种适配
     并且内建游戏场景层管理，更加方便游戏制作；
     单例对象，调用更加方便；
     两种适配模式，总有一种适合你的游戏。
+    
 ##使用方法：
 1.把launcher文件夹下egret_loader.js中的适配策略修改为egret.StageScaleMode.NO_BORDER；
 2.初始化游戏场景：
 ```javascript
 slib.GameStage.i().initGameStage();
 ```
-
 3.设置适配模式，取值为slib.GameStage.FIT_MODE_REPOSITION和GameStage.FIT_MODE_SCALE_ALL，如不设置则默认为GameStage.FIT_MODE_REPOSITION：
 ```
 slib.GameStage.i().setFitMode(slib.GameStage.FIT_MODE_SCALE_ALL);
@@ -45,17 +48,21 @@ slib.GameStage.i().addChild(this._gameLayer);
     
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/11.jpg?raw=true)
+
 高度溢出
     
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/22.jpg?raw=true)
+
 高度不足
 
 FIT_MODE_REPOSITION两种情况下的对比图：
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/33.jpg?raw=true)
+
 高度溢出
     
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/44.jpg?raw=true)
+
 高度不足
 
 欢迎交流讨论，QQ#286844968
