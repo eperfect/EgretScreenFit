@@ -31,9 +31,9 @@ class Main extends egret.DisplayObjectContainer{
      * 加载进度界面
      */
     private loadingView:LoadingUI;
-    private _bgLayer:SDisplayObjectContainer;
-    private _gameLayer:SDisplayObjectContainer;
-    private _uiLayer:SDisplayObjectContainer;
+    private _bgLayer:slib.DisplayObjectContainer;
+    private _gameLayer:slib.DisplayObjectContainer;
+    private _uiLayer:slib.DisplayObjectContainer;
 
     public constructor() {
         super();
@@ -84,19 +84,19 @@ class Main extends egret.DisplayObjectContainer{
      */
     private createGameScene():void{
         //初始化游戏舞台
-        GameStage.i().initGameStage();
-//        GameStage.i().setFitMode(GameStage.FIT_MODE_SCALE_ALL);
+        slib.GameStage.i().initGameStage();
+        //slib.GameStage.i().setFitMode(slib.GameStage.FIT_MODE_SCALE_ALL);
 
         //创建游戏层
-        this._bgLayer = GameStage.i().getLayer(GameLayer.LAYER_GAME);
-        this._gameLayer = GameStage.i().getLayer(GameLayer.LAYER_GAME);
-        this._uiLayer = GameStage.i().getLayer(GameLayer.LAYER_UI);
-        GameStage.i().addChild(this._bgLayer );
-        GameStage.i().addChild(this._gameLayer );
-        GameStage.i().addChild(this._uiLayer );
+        this._bgLayer = slib.GameStage.i().getLayer(slib.GameLayer.LAYER_GAME);
+        this._gameLayer = slib.GameStage.i().getLayer(slib.GameLayer.LAYER_GAME);
+        this._uiLayer = slib.GameStage.i().getLayer(slib.GameLayer.LAYER_UI);
+        slib.GameStage.i().addChild(this._bgLayer );
+        slib.GameStage.i().addChild(this._gameLayer );
+        slib.GameStage.i().addChild(this._uiLayer );
 
         //设置游戏最底层可拉伸背景
-        GameStage.i().setScalableBg(new egret.Bitmap(RES.getRes("bgImage")));
+        slib.GameStage.i().setScalableBg(new egret.Bitmap(RES.getRes("bgImage")));
 
         this.addBg();
         this.addBitmap();
@@ -105,33 +105,33 @@ class Main extends egret.DisplayObjectContainer{
 
     /*添加游戏背景*/
     private addBg():void{
-        var top:SBitmap = new SBitmap(RES.getRes("top"));
-        top.width = GameStage.DESIGN_WIDTH;
+        var top:slib.Bitmap = new slib.Bitmap(RES.getRes("top"));
+        top.width = slib.GameStage.DESIGN_WIDTH;
         this._bgLayer.addChild(top);
 
-        var bottom:SBitmap = new SBitmap(RES.getRes("bottom"));
-        bottom.y = GameStage.DESIGN_HEIGHT - bottom.height;
-        bottom.width = GameStage.DESIGN_WIDTH;
+        var bottom:slib.Bitmap = new slib.Bitmap(RES.getRes("bottom"));
+        bottom.y = slib.GameStage.DESIGN_HEIGHT - bottom.height;
+        bottom.width = slib.GameStage.DESIGN_WIDTH;
         this._bgLayer.addChild(bottom);
     }
 
     /*添加UI按钮*/
     private addBtns():void{
-        var btn1:SBitmap = new SBitmap(RES.getRes("btn1"));
+        var btn1:slib.Bitmap = new slib.Bitmap(RES.getRes("btn1"));
         btn1.anchorX = 0.5;
         btn1.anchorY = 0.5;
-        btn1.x = GameStage.DESIGN_WIDTH/2;
-        btn1.y = GameStage.DESIGN_HEIGHT/2;
+        btn1.x = slib.GameStage.DESIGN_WIDTH/2;
+        btn1.y = slib.GameStage.DESIGN_HEIGHT/2;
         this._uiLayer.addChild(btn1);
 
-        var btn2:SBitmap = new SBitmap(RES.getRes("btn2"));
-        btn2.x = GameStage.DESIGN_WIDTH/2 - 30;
+        var btn2:slib.Bitmap = new slib.Bitmap(RES.getRes("btn2"));
+        btn2.x = slib.GameStage.DESIGN_WIDTH/2 - 30;
         btn2.anchorX = 0.5;
         btn2.y = 450;
         this._uiLayer.addChild(btn2);
 
-        var btn3:SBitmap = new SBitmap(RES.getRes("btn3"));
-        btn3.x = GameStage.DESIGN_WIDTH/2 + 30;
+        var btn3:slib.Bitmap = new slib.Bitmap(RES.getRes("btn3"));
+        btn3.x = slib.GameStage.DESIGN_WIDTH/2 + 30;
         btn3.anchorX = 0.5;
         btn3.y = 450;
         this._uiLayer.addChild(btn3);
@@ -139,22 +139,22 @@ class Main extends egret.DisplayObjectContainer{
 
     /*添加场景元件*/
     private addBitmap():void{
-        var bm1:SBitmap = new SBitmap(RES.getRes("topAsset"));
+        var bm1:slib.Bitmap = new slib.Bitmap(RES.getRes("topAsset"));
         bm1.x = 100;
         this._gameLayer.addChild(bm1);
 
-        var bm2:SBitmap = new SBitmap(RES.getRes("topAsset2"));
+        var bm2:slib.Bitmap = new slib.Bitmap(RES.getRes("topAsset2"));
         bm2.x = 300;
         this._gameLayer.addChild(bm2);
 
-        var bm3:SBitmap = new SBitmap(RES.getRes("bottomAsset"));
+        var bm3:slib.Bitmap = new slib.Bitmap(RES.getRes("bottomAsset"));
         bm3.x = 100;
-        bm3.y = GameStage.DESIGN_HEIGHT - bm3.height;
+        bm3.y = slib.GameStage.DESIGN_HEIGHT - bm3.height;
         this._gameLayer.addChild(bm3);
 
-        var bm4:SBitmap = new SBitmap(RES.getRes("bottomAsset2"));
+        var bm4:slib.Bitmap = new slib.Bitmap(RES.getRes("bottomAsset2"));
         bm4.x = 300;
-        bm4.y = GameStage.DESIGN_HEIGHT - bm4.height;
+        bm4.y = slib.GameStage.DESIGN_HEIGHT - bm4.height;
         this._gameLayer.addChild(bm4);
     }
 }
