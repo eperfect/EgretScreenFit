@@ -33,7 +33,7 @@ slib.GameStage.i().setFitMode(slib.GameStage.FIT_MODE_SCALE_ALL);
 this._gameLayer = slib.GameStage.i().getLayer(slib.GameLayer.LAYER_GAME);
 slib.GameStage.i().addChild(this._gameLayer);
 ```
-               
+
 ##备注：
     游戏中的显示对象最终都要被添加到GameStage中，包括添加到GameStage的子对象；
     显示对象要使用库里对应的对象，如egret.DisplayObjectContainer对应SDisplayObjectContainer，同理Shape、Bitmap、Sprite，否则将不会对其进行重新布局，当然也可以利用这个特性保护游戏内某些不想被重定位的对象；
@@ -42,6 +42,7 @@ slib.GameStage.i().addChild(this._gameLayer);
     GameStage.FIT_MODE_SCALE_ALL：简单缩放舞台并居中显示，但是背景层依然会填充整个屏幕，可以理解为一个不带黑边的SHOW_ALL；
     GameStage.FIT_MODE_REPOSITION：重新按比例对舞台上对象进行排版，体验会更好，大部分情况适用，建议使用此方式。
     两种方式对比，FIT_MODE_SCALE_ALL下高度溢出和高度不足两种情况下的表现：
+    
 
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/11.jpg?raw=true)
 高度溢出
@@ -50,6 +51,7 @@ slib.GameStage.i().addChild(this._gameLayer);
 高度不足
 
 FIT_MODE_REPOSITION两种情况下的对比图：
+
 ![](https://github.com/eperfect/ScreenFit/blob/master/doc/img/33.jpg?raw=true)
 高度溢出
     
